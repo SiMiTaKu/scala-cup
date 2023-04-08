@@ -1,5 +1,5 @@
 # 第10章 合成と継承 Composition and Inheritance
-
+[パラメータ無しメソッドの定義](#anchor1)
 
 abstract修飾子が示すのは実装を持たない抽象メンバを持つかもしれないということである。
 抽象クラスのインスタンスを作ることはできない。
@@ -11,6 +11,7 @@ scala> new Element
 ```
 
 ***
+<a id="anchor1"></a>
 ## パラメータ無しメソッドの定義
 **パラメータ無しメソッド - parameterless methods**
 ```scala
