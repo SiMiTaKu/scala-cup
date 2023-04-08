@@ -54,3 +54,33 @@ abstract class Element {
 "hello".length // 副作用がないので()なし
 println()      // ()を省略しない方が良い
 ```
+
+***
+パラメータ無しメソッドをフィールドでオーバーライドする。<br>
+これは問題ない。
+```scala
+abstract class Element {
+  def contents: Array[String]
+}
+
+abstract class ArrayElement(conts:  Array[String]) extends Element {
+  val contents: Array[String] = conts
+}
+```
+しかし同じクラス内で同じ名前のフィールドとメソッドを持つことはできない。<br>
+そのため下記はコンパイラーを通らない。
+```scala
+class WontCompile {
+  private var f = 0
+  def f = 1
+}
+```
+
+***
+
+### パラメータフィールド定義
+```scala
+class ArrayElement(
+    val contents: Array[String]
+) extends Element
+```
